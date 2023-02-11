@@ -28,7 +28,7 @@ EatWhat is a simple food picker. It is a web application that allows you to pick
 
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
-- [React Redux](https://react-redux.js.org/)
-- [Redux](https://redux.js.org/)
+- [React Hook Form](https://react-hook-form.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind CSS Typography](https://tailwindcss.com/docs/typography-plugin)
 - [DaisyUI](https://daisyui.com/)

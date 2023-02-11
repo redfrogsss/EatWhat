@@ -1,3 +1,7 @@
-import { Homepage } from "./Homepage";
+import { NewVote } from "./NewVote"
+import { HomePage } from "./HomePage";
+import { JoinVote } from "./JoinVote";
+import { Vote } from "./Vote";
+import { VoteSuccess } from "./VoteSuccess";
 
-export { Homepage };
+export { HomePage, NewVote, JoinVote, Vote, VoteSuccess };
