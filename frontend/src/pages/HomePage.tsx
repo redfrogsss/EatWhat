@@ -1,6 +1,18 @@
+import axios from "axios";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const HomePage = () => {
+
+    useEffect(()=>{
+        console.log("Test Backend")
+
+        axios.get("http://localhost:8000/").then((res) => { 
+            console.log(res.data);
+         }).catch((err) => {
+            console.log(err);
+          });
+    }, []);
     
     return (
         <div className="flex flex-col w-64 border-opacity-50">
