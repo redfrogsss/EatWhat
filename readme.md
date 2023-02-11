@@ -4,11 +4,22 @@
 
 EatWhat is a simple food picker. It is a web application that allows you to pick a food from a list of foods. It is a simple web application that is built with React.
 
-## Installation
+## Getting Started 
 
-1. Clone the repository
-2. Install the dependencies
-3. Run the application
+### Frontend
+```bash
+cd frontend && yarn && yarn run dev
+```
+
+### Backend
+```bash
+cd backend && deno run -A app.ts
+```
+
+### Database
+```bash
+cd db && docker-compose up -d
+```
 
 ## Usage
 
