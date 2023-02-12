@@ -128,8 +128,7 @@ app.post("/voteOption/:id", (req: any, res: any) => {
 });
 
 // vote an food
-app.post("/vote/:id/:option", (req: any, res: any) => {
-    let id = req.params.id;
+app.post("/voteItem/:option", (req: any, res: any) => {
     let option = req.params.option;
 
     // Insert vote item
