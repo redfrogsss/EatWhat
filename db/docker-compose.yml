@@ -9,7 +9,7 @@ services:
     image: mysql/mysql-server:8.0
     volumes:
       - db_data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./EatWhat.sql:/docker-entrypoint-initdb.d/EatWhat.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: EatWhat

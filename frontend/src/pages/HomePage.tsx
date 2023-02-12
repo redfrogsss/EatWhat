@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 export const HomePage = () => {
 
     useEffect(()=>{
-        console.log("Test Backend")
+        // Test backend connection
+        console.log("Test Backend Connection")
 
         axios.get("http://localhost:8000/").then((res) => { 
             console.log(res.data);
