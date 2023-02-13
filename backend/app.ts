@@ -90,21 +90,7 @@ app.post("/vote", (req: any, res: any) => {
 
         // Get the last inserted id
         let id = data.insertId;
-
-        // Insert vote options
-        let options = ["Option 1", "Option 2", "Option 3"];
-        let query = "INSERT INTO VoteOption (vote_id, name) VALUES ?";
-        let values = options.map((option: string) => [id, option]);
-
-        pool.query(query, [values], (err: any, data: any) => {
-            if (err) {
-                console.error(err);
-                return;
-            }
-
-            res.send({vote_id: id});
-        });
-
+        res.send({vote_id: id})
     });
 });
 
