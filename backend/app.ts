@@ -134,6 +134,24 @@ app.post("/voteItem/:option", (req: any, res: any) => {
     });
 });
 
+app.get("/voteItem/:id", (req: any, res: any) => {
+    let id = req.params.id;
+
+    // get vote options
+    pool.query(
+        "SELECT * FROM VoteItem WHERE option_id = ?",
+        [id],
+        (err: any, voteItem: any) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            res.send({ vote_id: id, voteItem: voteItem });
+        }
+    );
+});
+
 app.listen(8000);
 
 console.log("Listening at http://localhost:8000/");
