@@ -15,6 +15,8 @@ export const Vote = () => {
 
     const [options, setOptions] = useState<Option[]>([])
 
+    const [isCopied, setIsCopied] = useState<boolean>(false);
+
     // Get options from server
     const getOptions = (voteId: string | undefined) => { 
         if (voteId === undefined) return [];
@@ -61,6 +63,14 @@ export const Vote = () => {
         voteFood(randomIndex);
     }
 
+    const shareLink = () => {
+        // Copy URL to clipboard
+        navigator.clipboard.writeText(window.location.href);
+
+        // Show success message
+        setIsCopied(true);
+    }
+
 
     useEffect(() => {
         if (id === undefined) navigate("/");  // redirect to home page if id is undefined
@@ -76,10 +86,10 @@ export const Vote = () => {
                     <b>Vote a food: </b>
                 </p>
             </article>
-            {/* <button className="btn" onClick={()=>{navigate("/vote/" + id + "/success")}}>Food 1</button> */}
             {generateOption()}
-            <div className="divider">OR</div>
             <button className="btn btn-primary" onClick={randomVote}>Randomly Choose One</button>
+            <div className="divider">OR</div>
+            <button className={"btn btn-secondary " + (isCopied ? "tooltip tooltip-bottom tooltip-open" : "")} data-tip="URL Copied" onClick={shareLink}>Copy URL to Share Vote</button>
             <article className="prose lg:prose-xl my-4">
             <small>Vote ID: {id}</small>
             </article>
