@@ -9,6 +9,6 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "yarn ts-node app.ts"
+    "start": "npx ts-node app.ts"
   }
 }

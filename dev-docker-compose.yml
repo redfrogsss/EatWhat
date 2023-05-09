@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  react:
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      dockerfile: ./frontend/dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+  express:
+    restart: unless-stopped
+    build:
+      context: ./backend
+      dockerfile: ./backend/dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - mysql_host=localhost
+      - mysql_port=3306
+      - mysql_user=test
+      - mysql_password=test
+      - mysql_database=eatwhat
+  db:
+    image: mysql/mysql-server:8.0
+    volumes:
+      - ./eatwhat.sql:/docker-entrypoint-initdb.d/eatwhat.sql
+    environment:
+      mysql_root_password: root
+      mysql_database: eatwhat
+      mysql_user: test
+      mysql_password: test
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    command: ["mysqld", "--default-authentication-plugin=mysql_native_password"]
+  phpmyadmin:
+    image: phpmyadmin
+    restart: unless-stopped
+    ports:
+        - 8080:80
+    environment:
+        - pma_arbitrary=1
