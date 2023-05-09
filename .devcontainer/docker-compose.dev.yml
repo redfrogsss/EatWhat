@@ -24,7 +24,7 @@ services:
     volumes:
       - ../backend:/app
     environment:
-      - mysql_host=localhost
+      - mysql_host=db
       - mysql_port=3306
       - mysql_user=test
       - mysql_password=test

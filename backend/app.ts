@@ -8,6 +8,7 @@ app.use(cors()); // enable CORS
 app.use(express.json()); // enable json body parsing
 
 // mysql setup
+console.log("Connecting to " + process.env.MYSQL_HOST + " as " + process.env.MYSQL_USER)
 const mysql = require("mysql");
 var pool = mysql.createPool({
     connectionLimit: 100,
