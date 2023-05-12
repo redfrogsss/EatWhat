@@ -1,8 +1,12 @@
 # EatWhat - A simple lunch/dinner picker
 
-## Introduction
+[EatWhat-app](https://github.com/redfrogsss/EatWhat-app) - The mobile app version of the website 
 
-EatWhat is a simple food picker. It is a web application that allows you to pick a food from a list of foods. It is a simple web application that is built with React.
+## What is this?
+
+This app allows users to start a vote and ask their friends to choose what to eat for the lunch or dinner. 
+
+This app tries to solve a simple yet annoying problem: `What should we eat for lunch / dinner?`. To solve this problem, the user who start the vote need to input a set of options for lunch / dinner. Then, his/her friends could enter the vote using a code and choose their preferred options or choose randomly by clicking a button. At the end, the option with the highest votes will be the final choice.
 
 ## Getting Started 
 
@@ -21,21 +25,9 @@ cd backend && deno run -A app.ts
 cd db && docker-compose up -d
 ```
 
-## Usage
+## Learn More
 
-1. Add a food to the list
-2. Pick a food from the list
-
-## Contributing
-
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
-
-
-## Acknowledgements
+The following tech is used in this project:
 
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
