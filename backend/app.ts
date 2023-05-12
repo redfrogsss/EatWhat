@@ -61,6 +61,20 @@ app.get("/vote", (req: any, res: any) => {
     });
 });
 
+// get vote by id
+app.get("/vote/:id", (req: any, res: any) => {
+    let id = req.params.id;
+    pool.query("SELECT * FROM Vote WHERE id = ?", [id], (err: any, data: any) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        // rows fetch
+        res.send(data);
+    });
+});
+
 // get vote option by id
 app.get("/voteOption/:id", (req: any, res: any) => {
     let id = req.params.id;
